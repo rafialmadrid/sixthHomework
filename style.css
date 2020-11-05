@@ -1,0 +1,17 @@
+#title{
+    text-align: center;
+    background-color: grey;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}  
+.firstRow{
+    background-color: rgb(234, 235, 236);
+}
+#searchButton{
+    background-color: rgb(207, 227, 240);
+}
+#citySummary{
+    border-style: ridge;
+}
+
