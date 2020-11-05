@@ -35,7 +35,10 @@
         <div class="col-sm-9">
             <div class="row" id="citySummary"> 
                 <div class="col-sm-12">
+                  <div>
                     <h3 id="cityName"> City Name & Date</h3>
+                    <img id="wicon" src="" alt="Weather icon">
+                  </div>
                     <p id="Temp"> Temperature</p>
                     <p id="Hum"> Humidity</p>
                     <p id="windSpeed"> Wind Speed</p>
@@ -117,7 +120,11 @@
           $("#currentDay").text(n);
           console.log(n);
 
-        $("#cityName").text(response.name + " ("+n+")" + " "+response.weather.icon);
+          var iconcode = response.weather[0].icon;
+          var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+          $('#wicon').attr('src', iconurl);
+
+        $("#cityName").text(response.name + " ("+n+")");
         var tempF = (response.main.temp - 273.15) * 1.80 + 32;
         $("#Temp").text("Temperature: " + tempF.toFixed(0) + " °F");
         $("#Hum").text("Humidity: " + response.main.humidity.toFixed(0) + " %");
