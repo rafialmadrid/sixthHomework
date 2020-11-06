@@ -18,6 +18,8 @@
 
         <h1 id="title">Weather Dashboard</h1>
 
+  <div class="container-fluid">
+
     <div class="row">
         <div class="col-sm-3 firstRow">
 
@@ -32,7 +34,7 @@
 
         </div>
 
-        <div class="col-sm-9">
+        <div class="col-sm-9 rightSide">
             <div class="row" id="citySummary"> 
                 <div class="col-sm-12">
                   <div>
@@ -53,18 +55,54 @@
             </div>
             <div class="row"> 
 
-                <div class="col-sm-4 forecast">
-                <p>Date</p>
-                <p>Date</p>
-                <p>Date</p>
-                <p>Date</p>
+                <div class="col col1 forecast" id="FC1">
+                <h5 id="Date1">Date</h5>
+                <img id="fcImg1" src="">
+                <p id="fcTemp1">Temperature</p>
+                <p id="fcHum1">Humidity</p>
+               
                 </div>
+
+                <div class="col col2 forecast" id="FC2">
+                <h5 id="Date2">Date</h5>
+                <img id="fcImg2" src="">
+                <p id="fcTemp2">Temperature</p>
+                <p id="fcHum2">Humidity</p>
+
+                </div>
+
+                <div class="col col3 forecast" id="FC3">
+                <h5 id="Date3">Date</h5>
+                <img id="fcImg3" src="">
+                <p id="fcTemp3">Temperature</p>
+                <p id="fcHum3">Humidity</p>
+
+                </div>
+
+                <div class="col col4 forecast" id="FC4">
+                <h5 id="Date4">Date</h5>
+                <img id="fcImg4" src="">
+                <p id="fcTemp4">Temperature</p>
+                <p id="fcHum4">Humidity</p>
+
+                </div>
+
+                <div class="col col5 forecast" id="FC5">
+                <h5 id="Date5">Date</h5>
+                <img id="fcImg5" src="">
+                <p id="fcTemp5">Temperature</p>
+                <p id="fcHum5">Humidity</p>
+
+                </div>
+             
             
                 </div>
             </div>
         </div>
      
       </div>
+
+    </div>
 
 
 
@@ -128,7 +166,44 @@
           } else if(response[0].value>10){
             $("#uvIndex").text("UV Index: "+response[0].value).css({ "backgroundColor" : "purple" , "color": "white"});
           }
+
+          var URL5fc = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&cnt=5&&appid=3679ca64488dfd3d10918b4aa2b955ea";
+
+          $.ajax({
+          url: URL5fc,
+          method: "GET"
+        }).then(function(response) {
+      
+          $("#Date1").text(response.list[0].dt_txt.substring(0,10));
+
+          var fcIcon1 = response.list[0].weather[0].icon;
+          var fcIcon1url = "http://openweathermap.org/img/w/" + fcIcon1 + ".png";
+          $('#fcImg1').attr('src', fcIcon1url);
+
+          var fctempF1 = (response.list[0].main.temp - 273.15) * 1.80 + 32;
+          $("#fcTemp1").text("Temperature: " + fctempF1.toFixed(0) + "°F");
+          $("#fcHum1").text("Humidity: " + response.list[0].main.humidity.toFixed(0) + "%");
+
+
+          $("#Date2").text(response.list[8].dt_txt.substring(0,10));
+
+          var fcIcon2 = response.list[8].weather[8].icon;
+          var fcIcon2url = "http://openweathermap.org/img/w/" + fcIcon2 + ".png";
+          $('#fcImg2').attr('src', fcIcon2url);
+
+          var fctempF2 = (response.list[8].main.temp - 273.15) * 1.80 + 32;
+          $("#fcTemp2").text("Temperature: " + fctempF2.toFixed(0) + "°F");
+          $("#fcHum2").text("Humidity: " + response.list[8].main.humidity.toFixed(0) + "%");
+
           
+
+
+
+        
+        });
+          
+
+
     
         });
 

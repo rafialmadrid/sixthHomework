@@ -19,12 +19,20 @@
 }
 .forecast{
     border-style: none;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    background-color: rgb(12, 136, 224);
-    margin-left: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: rgb(46, 169, 214);
+    margin-left: 15px;
+    color: white;
 }
+body{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
 
 
