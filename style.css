@@ -13,8 +13,18 @@
 }
 #citySummary{
     border-style: ridge;
+    border-width: 1px;
+    margin-left: auto;
+    
 }
-#uvIndex{
-    color: white;
+.forecast{
+    border-style: none;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: rgb(12, 136, 224);
+    margin-left: 10px;
 }
+
 

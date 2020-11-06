@@ -37,7 +37,7 @@
                 <div class="col-sm-12">
                   <div>
                     <h3 id="cityName"> City Name & Date</h3>
-                    <img id="wicon" src="" alt="Weather icon">
+                    <img id="wicon" src="">
                   </div>
                     <p id="Temp"> Temperature</p>
                     <p id="Hum"> Humidity</p>
@@ -53,37 +53,13 @@
             </div>
             <div class="row"> 
 
-                <div class="col-sm-2">
+                <div class="col-sm-4 forecast">
                 <p>Date</p>
                 <p>Date</p>
                 <p>Date</p>
                 <p>Date</p>
                 </div>
-                <div class="col-sm-2">
-                    <p>Date</p>
-                    <p>Date</p>
-                    <p>Date</p>
-                    <p>Date</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <p>Date</p>
-                        <p>Date</p>
-                        <p>Date</p>
-                        <p>Date</p>
-                        </div>
-                        <div class="col-sm-2">
-                            <p>Date</p>
-                            <p>Date</p>
-                            <p>Date</p>
-                            <p>Date</p>
-                            </div>
-                            <div class="col-sm-2">
-                                <p>Date</p>
-                                <p>Date</p>
-                                <p>Date</p>
-                                <p>Date</p>
-                                </div>
-                
+            
                 </div>
             </div>
         </div>
@@ -142,15 +118,15 @@
         }).then(function(response) {
           console.log(response);
           if (response[0].value<=2) {
-            $("#uvIndex").text("UV Index: "+response[0].value).css("backgroundColor", "green");
+            $("#uvIndex").text("UV Index: "+response[0].value).css({ "backgroundColor" : "green" , "color": "white"});
           } else if(response[0].value<=5){
-            $("#uvIndex").text("UV Index: "+response[0].value).css("backgroundColor", "yellow");
+            $("#uvIndex").text("UV Index: "+response[0].value).css("backgroundColor" , "khaki" );
           } else if(response[0].value<=7){
-            $("#uvIndex").text("UV Index: "+response[0].value).css("backgroundColor", "orange");
+            $("#uvIndex").text("UV Index: "+response[0].value).css({ "backgroundColor" : "orange" , "color": "white"});
           } else if(response[0].value<=10){
-            $("#uvIndex").text("UV Index: "+response[0].value).css("backgroundColor", "red");
+            $("#uvIndex").text("UV Index: "+response[0].value).css({ "backgroundColor" : "red" , "color": "white"});
           } else if(response[0].value>10){
-            $("#uvIndex").text("UV Index: "+response[0].value).css("backgroundColor", "purple");
+            $("#uvIndex").text("UV Index: "+response[0].value).css({ "backgroundColor" : "purple" , "color": "white"});
           }
           
     
