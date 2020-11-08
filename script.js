@@ -19,7 +19,7 @@ $(document).ready(function() {
         console.log(n);
 
         var iconcode = response.weather[0].icon;
-        var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+        var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
         $('#wicon').attr('src', iconurl);
 
       $("#cityName").text(response.name + " ("+n+")");
@@ -33,7 +33,7 @@ $(document).ready(function() {
       console.log(lat);
       console.log(lon);
 
-      var URLuvindex = "http://api.openweathermap.org/data/2.5/uvi/forecast?lat="+lat+"&lon="+lon+"&&appid=3679ca64488dfd3d10918b4aa2b955ea";
+      var URLuvindex = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat="+lat+"&lon="+lon+"&&appid=3679ca64488dfd3d10918b4aa2b955ea";
 
       $.ajax({
         url: URLuvindex,
@@ -52,7 +52,7 @@ $(document).ready(function() {
           $("#uvIndex").text("UV Index: "+response[0].value).css({ "backgroundColor" : "purple" , "color": "white"});
         }
 
-        var URL5fc = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&&appid=3679ca64488dfd3d10918b4aa2b955ea";
+        var URL5fc = "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&&appid=3679ca64488dfd3d10918b4aa2b955ea";
 
         $.ajax({
         url: URL5fc,
@@ -66,7 +66,7 @@ $(document).ready(function() {
         $("#Date1").text(response.list[2].dt_txt.substring(0,10));
 
         var fcIcon1 = response.list[2].weather[0].icon;
-        var fcIcon1url = "http://openweathermap.org/img/w/" + fcIcon1 + ".png";
+        var fcIcon1url = "https://openweathermap.org/img/w/" + fcIcon1 + ".png";
         $('#fcImg1').attr('src', fcIcon1url);
 
         var fctempF1 = (response.list[2].main.temp - 273.15) * 1.80 + 32;
@@ -79,7 +79,7 @@ $(document).ready(function() {
         $("#Date2").text(response.list[10].dt_txt.substring(0,10));
 
         var fcIcon2 = response.list[10].weather[0].icon;
-        var fcIcon2url = "http://openweathermap.org/img/w/" + fcIcon2 + ".png";
+        var fcIcon2url = "https://openweathermap.org/img/w/" + fcIcon2 + ".png";
         $('#fcImg2').attr('src', fcIcon2url);
 
         var fctempF2 = (response.list[10].main.temp - 273.15) * 1.80 + 32;
@@ -92,7 +92,7 @@ $(document).ready(function() {
         $("#Date3").text(response.list[18].dt_txt.substring(0,10));
 
         var fcIcon3 = response.list[18].weather[0].icon;
-        var fcIcon3url = "http://openweathermap.org/img/w/" + fcIcon3 + ".png";
+        var fcIcon3url = "https://openweathermap.org/img/w/" + fcIcon3 + ".png";
         $('#fcImg3').attr('src', fcIcon3url);
 
         var fctempF3 = (response.list[18].main.temp - 273.15) * 1.80 + 32;
@@ -104,7 +104,7 @@ $(document).ready(function() {
         $("#Date4").text(response.list[26].dt_txt.substring(0,10));
 
         var fcIcon4 = response.list[26].weather[0].icon;
-        var fcIcon4url = "http://openweathermap.org/img/w/" + fcIcon4 + ".png";
+        var fcIcon4url = "https://openweathermap.org/img/w/" + fcIcon4 + ".png";
         $('#fcImg4').attr('src', fcIcon4url);
 
         var fctempF4 = (response.list[26].main.temp - 273.15) * 1.80 + 32;
@@ -116,7 +116,7 @@ $(document).ready(function() {
         $("#Date5").text(response.list[34].dt_txt.substring(0,10));
 
         var fcIcon5 = response.list[34].weather[0].icon;
-        var fcIcon5url = "http://openweathermap.org/img/w/" + fcIcon5 + ".png";
+        var fcIcon5url = "https://openweathermap.org/img/w/" + fcIcon5 + ".png";
         $('#fcImg5').attr('src', fcIcon5url);
 
         var fctempF5 = (response.list[34].main.temp - 273.15) * 1.80 + 32;
