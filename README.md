@@ -1,4 +1,4 @@
-#The Weather App (https://rafialmadrid.github.io/sixthHomework/) <-- Link to the deployed app
+#The Weather App (https://rafialmadrid.github.io/weatherApp/) <-- Link to the deployed app
 
 <img src="Weather app sample.png" alt="Deployed app">
 
